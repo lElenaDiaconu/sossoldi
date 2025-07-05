@@ -1,0 +1,20 @@
+import { Component } from '@angular/core';
+import { StorageService } from './services/storage/app-storage.service';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.scss'],
+  standalone: false,
+})
+export class AppComponent
+{
+
+  constructor(private storageService: StorageService) { }
+
+  async ngOnInit()
+  {
+    await this.storageService.init(); // inizializza una volta all'avvio dell'app
+  }
+
+}

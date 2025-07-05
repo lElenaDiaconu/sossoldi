@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-button color="medium" (click)="cancel()">Cancel</ion-button>
+        </ion-buttons>
+        <ion-title>Aggiungi spesa</ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="dismiss()" [strong]="true">Confirm</ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+    @if(data !== null){
+    <ion-item>
+        <ion-input type="numeric" labelPlacement="stacked" label="Inserire importo" [(ngModel)]="data.Amount"
+            placeholder="Importo" required="true"></ion-input>
+    </ion-item>
+
+    <!-- <ion-item> -->
+    <!-- <ion-input type="text" labelPlacement="stacked" label="Inserire Categoria" [(ngModel)]="data.Category"
+        placeholder="Categoria" required="false"></ion-input> -->
+
+    <ion-item>
+        <ion-select label="Categoria" [interfaceOptions]="customPopoverOptions" interface="popover"
+            placeholder="Seleziona" (ionChange)="handleChange($event)">
+
+            @for(category of categories(); track category.Id){
+            <ion-select-option [value]="category">{{ category.Name }}</ion-select-option>
+            }
+
+        </ion-select>
+    </ion-item>
+    <!-- </ion-item> -->
+    }
+</ion-content>

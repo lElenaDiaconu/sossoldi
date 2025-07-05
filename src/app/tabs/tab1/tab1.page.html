@@ -1,0 +1,46 @@
+<!-- Header -->
+<ion-header [translucent]="true" mode="md">
+  <ion-toolbar>
+    <ion-title>
+      sossoldi
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="invert-mode-outline">
+        </ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Content -->
+<ion-content [fullscreen]="true" class="ion-padding">
+  <!-- Header placeholder -->
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="medium">Resoconto</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+
+  <app-basic-dataset />
+  <!-- 
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+
+    </ion-fab-button>
+  </ion-fab> -->
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button (click)="addMovement()" data-desc="Aggiungi spesa">
+        <ion-icon name="card"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button (click)="addCategory()" data-desc="Aggiungi categoria">
+        <ion-icon name="pricetags"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+</ion-content>

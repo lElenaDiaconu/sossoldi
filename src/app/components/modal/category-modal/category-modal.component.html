@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-button color="medium" (click)="cancel()">Cancel</ion-button>
+        </ion-buttons>
+        <ion-title>Aggiungi categoria</ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="dismiss()" [strong]="true">Confirm</ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+    @if(data !== null){
+    <ion-item>
+        <ion-input type="text" labelPlacement="stacked" label="Inserire nome" [(ngModel)]="data.Name" placeholder="Nome"
+            required="true"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-input type="text" labelPlacement="stacked" label="Inserire colore" [(ngModel)]="data.Color"
+            placeholder="Colore" required="false"></ion-input>
+    </ion-item>
+    }
+</ion-content>

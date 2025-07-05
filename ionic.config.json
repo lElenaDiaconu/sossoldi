@@ -1,0 +1,7 @@
+{
+  "name": "sossoldi",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
