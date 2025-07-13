@@ -6,10 +6,9 @@ import { Tab1Page } from './tab1.page';
 
 import { Tab1PageRoutingModule } from './tab1-routing.module';
 import { BasicDatasetComponentModule } from '../../charts/charts.module';
-import { NgxEchartsModule } from 'ngx-echarts';
-import { ModalComponent } from '../../components/modal/modal.component';
 import { CategoryModalComponent } from 'src/app/components/modal/category-modal/category-modal.component';
 import { MovementModalComponent } from 'src/app/components/modal/movement-modal/movement-modal.component';
+import { ColorPickerComponent } from 'src/app/components/color-picker/color-picker.component';
 
 @NgModule({
   imports: [
@@ -18,7 +17,7 @@ import { MovementModalComponent } from 'src/app/components/modal/movement-modal/
     FormsModule,
     BasicDatasetComponentModule,
     Tab1PageRoutingModule,
-
+    ColorPickerComponent
   ],
   declarations: [Tab1Page, CategoryModalComponent, MovementModalComponent]
 })

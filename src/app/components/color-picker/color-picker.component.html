@@ -1,0 +1,16 @@
+<div class="color-picker">
+    @for(row of colors; track row) {
+
+    <ion-grid>
+        <ion-row class="ion-justify-content-center">
+            @for(color of row; track color) {
+            <ion-col>
+                <ion-button [style.--background]="color" [style.width]="'100%'" (click)="selectColor(color)">
+                    <!-- {{ color }} -->
+                </ion-button>
+            </ion-col>
+            }
+        </ion-row>
+    </ion-grid>
+    }
+</div>

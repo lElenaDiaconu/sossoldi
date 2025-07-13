@@ -40,8 +40,10 @@ export class StorageService
 
         if (value !== null && value !== undefined)
         {
-            //Set insert date
-            value.InsertDate = new Date();
+            //Set insert date - default to now if not provided
+            value.InsertDate = value.InsertDate ? new Date(value.InsertDate) : new Date();
+
+            //Set id
             value.Id = ++this._movementId;
 
             if (oldValue !== null && oldValue !== undefined)
@@ -82,11 +84,6 @@ export class StorageService
     {
         return await this._storage?.get(StorageKeys.Categories);
     }
-    // public async has(key: string): Promise<boolean>
-    // {
-    //     const value = await this._storage?.get(key);
-    //     return value !== null && value !== undefined;
-    // }
 
     public clearMovements(): void
     {

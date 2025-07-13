@@ -6,10 +6,6 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Categorie</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <list [listData]="listData()" [displayColumns]="displayColumns" [labels]="labels()" />
 </ion-content>

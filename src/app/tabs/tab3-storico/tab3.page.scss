@@ -1,3 +1,11 @@
 .refresh-icon {
     --ionicon-stroke-width: 50px;
 }
+
+.list-header {
+    border-bottom: solid 1px rgb(76 70 70);
+    background: #1e1e1e;
+    font-size: 15px;
+    font-weight: 500;
+    box-shadow: 0px 3px 11px 0px #80808052;
+}

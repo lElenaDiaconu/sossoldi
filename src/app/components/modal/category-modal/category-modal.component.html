@@ -19,6 +19,15 @@
     <ion-item>
         <ion-input type="text" labelPlacement="stacked" label="Inserire colore" [(ngModel)]="data.Color"
             placeholder="Colore" required="false"></ion-input>
+
+        <ion-button slot="end" (click)="openColorPicker = true">Scegli colore</ion-button>
+        <ion-modal [isOpen]="openColorPicker" (didDismiss)="openColorPicker = false" [initialBreakpoint]="1"
+            [breakpoints]="[0, 0.5, 1]" class="color-picker-modal">
+            <ng-template>
+                <color-picker (colorSelected)="onColorPicked($event); openColorPicker = false">
+                </color-picker>
+            </ng-template>
+        </ion-modal>
     </ion-item>
     }
 </ion-content>

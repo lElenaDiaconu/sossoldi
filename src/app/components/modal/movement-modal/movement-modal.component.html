@@ -9,27 +9,35 @@
         </ion-buttons>
     </ion-toolbar>
 </ion-header>
-<ion-content class="ion-padding">
+<ion-content class="ion-padding" style="border-radius: 10px;">
     @if(data !== null){
     <ion-item>
-        <ion-input type="numeric" labelPlacement="stacked" label="Inserire importo" [(ngModel)]="data.Amount"
+        <ion-input inputmode="numeric" labelPlacement="stacked" label="Inserire importo" [(ngModel)]="data.Amount"
             placeholder="Importo" required="true"></ion-input>
     </ion-item>
-
-    <!-- <ion-item> -->
-    <!-- <ion-input type="text" labelPlacement="stacked" label="Inserire Categoria" [(ngModel)]="data.Category"
-        placeholder="Categoria" required="false"></ion-input> -->
 
     <ion-item>
         <ion-select label="Categoria" [interfaceOptions]="customPopoverOptions" interface="popover"
             placeholder="Seleziona" (ionChange)="handleChange($event)">
 
             @for(category of categories(); track category.Id){
-            <ion-select-option [value]="category">{{ category.Name }}</ion-select-option>
+            <ion-select-option [value]="category">
+                {{ category.Name }}
+            </ion-select-option>
             }
 
         </ion-select>
     </ion-item>
-    <!-- </ion-item> -->
+
+    <ion-item>
+        <ion-label> Data </ion-label>
+        <ion-datetime-button slot="end" datetime="datetime"></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+            <ng-template>
+                <ion-datetime id="datetime" presentation="date" [(ngModel)]="data.InsertDate"
+                    placeholder="Seleziona data" [showDefaultButtons]="true"></ion-datetime>
+            </ng-template>
+        </ion-modal>
+    </ion-item>
     }
 </ion-content>

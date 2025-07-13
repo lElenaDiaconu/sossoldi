@@ -42,9 +42,9 @@ body {
     margin-top: env(safe-area-inset-top);
 }
 
-ion-tab-bar {
-    margin-bottom: calc(4px + env(safe-area-inset-top));
-}
+// ion-tab-bar {
+//     margin-bottom: calc(4px + env(safe-area-inset-top));
+// }
 
 ion-item {
     --inner-padding-end: 0px;

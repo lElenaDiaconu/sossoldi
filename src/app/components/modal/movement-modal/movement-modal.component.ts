@@ -21,7 +21,6 @@ export class MovementModalComponent extends ModalComponent<Movement>
         // message: 'Selezionare la categoria in cui rientra la spesa',
     };
 
-    // private sharedService: SharedService = inject(SharedService);
     protected categories: WritableSignal<Category[]> = signal([]);
 
     constructor(
